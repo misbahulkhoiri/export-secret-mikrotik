@@ -1,6 +1,5 @@
 # export-secret-mikrotik
 
-
 Exporting Mikrotik RoS Version 7 PPP/Hotspot Secrets
 This application was developed for Mikrotik users who encounter difficulties exporting PPP/Hotspot secrets to a .rsc file, where the passwords often disappear. Therefore, I'd like to contribute by creating an application that simplifies the process of exporting .rsc files via the Mikrotik API. This data can be exported as either a .rsc or Excel file. This application will not store user credentials as it operates locally, allowing it to be hosted on your personal localhost.
 
@@ -12,7 +11,7 @@ Make sure you're using the latest PHP version.
 Ensure that browser downloads are not blocked.
 Thank you.
 
-##############################################################################################################################################################################################################################################################################
+#######################################################################################################################################################################################
 
 Export Secret (PPP/Hotspot) Mikrotik RoS versi 7
 
