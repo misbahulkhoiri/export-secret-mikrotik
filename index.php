@@ -98,10 +98,11 @@
             <label for="data_type">Pilih Data yang Diekspor:</label>
             <select id="data_type" name="data_type">
                 <option value="/ip/hotspot/user">Hotspot User</option>
-                <option value="/ip/hotspot/profile">Hotspot Profile</option>
+                <option value="/ip/hotspot/user/profile">Hotspot Profile</option>
                 <!-- <option value="/ip/address">IP Address</option> -->
                 <!-- <option value="/interface/getall">Interface</option> -->
                 <option value="/ppp/secret">PPP Secret</option>
+                <option value="/ppp/profile">PPP Profile</option>
                 <!-- <option value="/system/identity">System Identity</option>
                 <option value="/queue/simple">Simple Queue</option> -->
             </select>

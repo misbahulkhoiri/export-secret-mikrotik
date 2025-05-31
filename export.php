@@ -43,12 +43,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     if (isset($item['.id'])) {
                         $rscContent .= "add ";
                         if (isset($item['name'])) $rscContent .= "name=" . escapeshellarg($item['name']) . " ";
-                        if (isset($item['hotspot-address'])) $rscContent .= "hotspot-address=" . escapeshellarg($item['hotspot-address']) . " ";
-                        if (isset($item['dns-name'])) $rscContent .= "dns-name=" . escapeshellarg($item['dns-name']) . " ";
-                        if (isset($item['html-directory'])) $rscContent .= "html-directory=" . escapeshellarg($item['html-directory']) . " ";
-                        if (isset($item['login-by'])) $rscContent .= "login-by=" . escapeshellarg($item['login-by']) . " ";
-                        if (isset($item['rate-limit'])) $rscContent .= "rate-limit=" . escapeshellarg($item['rate-limit']) . " ";
+                        if (isset($item['idle-timeout'])) $rscContent .= "idle-timeout=" . escapeshellarg($item['idle-timeout']) . " ";
+                        if (isset($item['keepalive-timeout'])) $rscContent .= "keepalive-timeout=" . escapeshellarg($item['keepalive-timeout']) . " ";
+                        if (isset($item['status-autorefresh'])) $rscContent .= "status-autorefresh=" . escapeshellarg($item['status-autorefresh']) . " ";
                         if (isset($item['shared-users'])) $rscContent .= "shared-users=" . escapeshellarg($item['shared-users']) . " ";
+                        if (isset($item['add-mac-cookie'])) $rscContent .= "add-mac-cookie=" . escapeshellarg($item['add-mac-cookie']) . " ";
+                        if (isset($item['mac-cookie-timeout'])) $rscContent .= "mac-cookie-timeout=" . escapeshellarg($item['mac-cookie-timeout']) . " ";
+                        if (isset($item['rate-limit'])) $rscContent .= "rate-limit=" . escapeshellarg($item['rate-limit']) . " ";
+                        if (isset($item['address-list'])) $rscContent .= "address-list=" . escapeshellarg($item['address-list']) . " ";
+                        if (isset($item['transparent-proxy'])) $rscContent .= "transparent-proxy=" . escapeshellarg($item['transparent-proxy']) . " ";
+                        if (isset($item['session-timeout'])) $rscContent .= "session-timeout=" . escapeshellarg($item['session-timeout']) . " "; // Added based on your example
                         if (isset($item['comment'])) $rscContent .= "comment=" . escapeshellarg($item['comment']) . " ";
                         $rscContent .= "\r\n";
                     }
@@ -75,6 +79,32 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         if (isset($item['disabled']) && $item['disabled'] == 'true') $rscContent .= "disabled=yes ";
                         // Properti lain yang tidak umum di export seperti caller-id, last-logged-out, dll, biasanya diabaikan
 
+                        $rscContent .= "\r\n";
+                    }
+                }
+                break;
+            case '/ppp/profile':
+                $rscContent .= "/ppp profile\r\n";
+                foreach ($data as $item) {
+                    if (isset($item['.id'])) {
+                        $rscContent .= "add ";
+                        if (isset($item['name'])) $rscContent .= "name=" . escapeshellarg($item['name']) . " ";
+                        if (isset($item['local-address'])) $rscContent .= "local-address=" . escapeshellarg($item['local-address']) . " ";
+                        if (isset($item['remote-address'])) $rscContent .= "remote-address=" . escapeshellarg($item['remote-address']) . " ";
+                        if (isset($item['bridge-learning'])) $rscContent .= "bridge-learning=" . escapeshellarg($item['bridge-learning']) . " ";
+                        if (isset($item['use-ipv6'])) $rscContent .= "use-ipv6=" . escapeshellarg($item['use-ipv6']) . " ";
+                        if (isset($item['use-mpls'])) $rscContent .= "use-mpls=" . escapeshellarg($item['use-mpls']) . " ";
+                        if (isset($item['use-compression'])) $rscContent .= "use-compression=" . escapeshellarg($item['use-compression']) . " ";
+                        if (isset($item['use-encryption'])) $rscContent .= "use-encryption=" . escapeshellarg($item['use-encryption']) . " ";
+                        if (isset($item['only-one'])) $rscContent .= "only-one=" . escapeshellarg($item['only-one']) . " ";
+                        if (isset($item['change-tcp-mss'])) $rscContent .= "change-tcp-mss=" . escapeshellarg($item['change-tcp-mss']) . " ";
+                        if (isset($item['use-upnp'])) $rscContent .= "use-upnp=" . escapeshellarg($item['use-upnp']) . " ";
+                        if (isset($item['rate-limit'])) $rscContent .= "rate-limit=" . escapeshellarg($item['rate-limit']) . " ";
+                        if (isset($item['address-list'])) $rscContent .= "address-list=" . escapeshellarg($item['address-list']) . " ";
+                        if (isset($item['dns-server'])) $rscContent .= "dns-server=" . escapeshellarg($item['dns-server']) . " ";
+                        if (isset($item['on-up'])) $rscContent .= "on-up=" . escapeshellarg($item['on-up']) . " ";
+                        if (isset($item['on-down'])) $rscContent .= "on-down=" . escapeshellarg($item['on-down']) . " ";
+                        if (isset($item['comment'])) $rscContent .= "comment=" . escapeshellarg($item['comment']) . " ";
                         $rscContent .= "\r\n";
                     }
                 }
