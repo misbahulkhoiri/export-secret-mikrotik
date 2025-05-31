@@ -1,0 +1,10 @@
+.vscode/
+.idea/
+.DS_Store
+*.log
+*.sqlite
+/vendor/ # Jika Anda pakai Composer
+.env
+/.phpunit.result.cache
+/.phpstorm.meta.php
+/public/hotspot/
